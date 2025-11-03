@@ -13,7 +13,7 @@ function Home() {
     const fetchtodos = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:4004/todo/fetch", {
+        const response = await axios.get("https://todo-backend-cyjx.onrender.com/todo/fetch", {
           withCredentials: true,
           headers: {
             "Content-Type": "application/json",
@@ -35,7 +35,7 @@ function Home() {
     if (!newtodo.trim()) return; // prevent empty or whitespace-only todos
     try {
       const response = await axios.post(
-        "http://localhost:4004/todo/create",
+        "https://todo-backend-cyjx.onrender.com/todo/create",
         {
           text: newtodo,
           completed: false,
@@ -67,7 +67,7 @@ function Home() {
     const todo = todos.find((t) => t._id === id);
     try {
       const response = await axios.put(
-        `http://localhost:4004/todo/update/${id}`,
+        `https://todo-backend-cyjx.onrender.com/todo/update/${id}`,
         {
           ...todo,
           completed: !todo.completed,
@@ -85,7 +85,7 @@ function Home() {
 
   const todoDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:4004/todo/delete/${id}`, {
+      await axios.delete(`https://todo-backend-cyjx.onrender.com/todo/delete/${id}`, {
         withCredentials: true,
       });
       setTodos(todos.filter((t) => t._id !== id));
@@ -98,7 +98,7 @@ function Home() {
   const navigateTo = useNavigate();
   const logout=async()=>{
     try {
-        await axios.get("http://localhost:4004/user/logout",{
+        await axios.get("https://todo-backend-cyjx.onrender.com/user/logout",{
           withCredentials:true,
         })
         toast.success("user logout successfully");
