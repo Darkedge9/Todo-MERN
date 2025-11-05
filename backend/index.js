@@ -15,10 +15,9 @@ const DB_URI = process.env.MONGODB_URI;
 // middlewares
 app.use(express.json());
 app.use(cookieParser());
-// app.use(cors())
 app.use(
   cors({
-    origin:process.env.FRONTEND_URL,
+    origin:"http://localhost:5137", // deployed frontend,
     credentials: true,
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"],
