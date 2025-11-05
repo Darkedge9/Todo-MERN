@@ -16,7 +16,7 @@ export const createTodo = async (req, res) =>{
         res.status(404).json({message: "Error occuring in Todo creation"})
         
     }
-}
+};
 
 export const getTodos = async(req, res) =>{
     try {
@@ -28,7 +28,7 @@ export const getTodos = async(req, res) =>{
           console.log(error);
         res.status(404).json({message: "Error occuring in Todo featching"});
     }
-}
+};
 
 
 export const updateTodos = async(req, res) =>{  
@@ -47,7 +47,7 @@ export const updateTodos = async(req, res) =>{
         res.status(404).json({message: "Error occuring in Todo updation"});
         
     }
-} 
+} ;
 
 export const deleteTodo = async(req, res) =>{
     try {
@@ -60,4 +60,4 @@ export const deleteTodo = async(req, res) =>{
         console.log(error);
         res.status(404).json({message: "Error occuring in deleting todo"})
     }
-}
+};
